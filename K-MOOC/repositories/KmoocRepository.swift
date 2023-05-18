@@ -44,6 +44,7 @@ class KmoocRepository: NSObject {
         }
     }
     
+    /// 문자열 형태의 JSON을 Dictionary 형태로 변형
     func getJSONObject(json: String) -> [String: Any] {
         let jsonData = json.data(using: .utf8)!
         let jsonObject = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: Any]
@@ -77,6 +78,4 @@ class KmoocRepository: NSObject {
                                       lectures: (json["results"] as! [[String: Any]]).map(parseLectureJSON))
          
     }
-    
-    
 }

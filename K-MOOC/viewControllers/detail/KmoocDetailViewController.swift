@@ -16,9 +16,6 @@ class KmoocDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        
-//        viewModel.detail()
         viewModel.configureUI = { [weak self] in
             guard let lecture = self?.viewModel.getLectureInfo else { return }
             ImageLoader.loadImage(url: lecture.courseImageLarge) { [weak self] image in
